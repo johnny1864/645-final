@@ -1,0 +1,123 @@
+@import '_variables.sass' 
+@import '_mixins.sass'
+
+//NUMBER OF COLUMNS IN GRID 
+$columns: 12
+
+//CREATES GRID
+@for $i from 1 through $columns 
+    .col-#{$i}
+        flex: 0 0 100% / $columns * $i  
+    
+/*********      
+//LAYOUT 
+/*********/
+body 
+    font-family: $fonts
+    font-size: 1em
+    line-height: 2em
+    background: url('../images/bg.gif') #FFF repeat-x
+    
+ul
+    list-style-type: none
+    display: flex
+a
+    text-decoration: none
+    
+/***************
+ MAIN & HEADER
+/**************/
+main
+    display: flex
+    flex-wrap: wrap
+    width: $pageWidth
+    margin: 0 auto
+    padding: 0 10px
+    nav
+        width: 540px
+        height: $navHeight
+        text-align: right
+        ul
+            margin-top: 95px
+            li 
+                margin-right: 10px
+                font-size: 0.8em
+            a
+                color: $primaryColor
+    figure
+        +layout($navHeight, 400px, url('../images/logo.png') no-repeat 0 50px)
+    header
+        padding-top: 40px
+        h1
+            +textStyling(4em, $primaryColor, 100, 0,center)
+        h2
+            +textStyling(2.5em, $white, 900, 0, center)
+        h3
+            +textStyling(2em, $white, 400, 0, center)
+        p
+            color: $grey
+            text-align: center
+        img
+            width: 100%
+/*************
+    HEADLINE
+/*************/
+#headline
+    +layout(130px, 100%, $headlineBG)
+    h1
+        padding-top: 50px
+        +textStyling(2.5em, $white, 100, 1em, center)
+/***********
+   CONTENT
+/**********/      
+#content
+    width: $pageWidth
+    display: flex
+    margin: 20px auto
+    h3
+        +textStyling(2em, $grey, 400, 1em, justified)
+    #products
+        margin-right: 1em
+    article img
+        float: left
+        padding-top: 10px
+        margin-right: 20px
+        
+.greybar
+    +layout(90px, 100%, $greyBarBG)
+    padding-top: 30px
+footer
+    +layout(120px, 100%, $footerBG)
+    padding-top: 50px
+    +textStyling(1em, $white, 400, 1em, center)
+.social-media 
+    width: 165px
+    margin: 0 auto
+    div
+        float: left
+        margin-right: 5px
+        margin-top: 5px
+    a 
+        display: block
+        width: 36px
+        height: 36px
+        text-indent: -9999px
+    div.one 	
+        background: url('../images/social-media.png') 0 0
+    div.two	
+        background: url('../images/social-media.png') -38px 0
+    div.three 	
+        background: url('../images/social-media.png') -76px 0
+    div.four 	
+        background: url('../images/social-media.png') -114px 0
+        
+    
+    
+    
+        
+    
+    
+    
+    
+    
+    
